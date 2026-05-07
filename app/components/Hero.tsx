@@ -105,30 +105,6 @@ export default function Hero() {
                 Conócenos
               </a>
             </div>
-
-            {/* Stats */}
-            <div className="flex flex-wrap gap-8">
-              <div>
-                <div className="text-4xl font-black text-[#F5A52B]">500+</div>
-                <div className="text-sm text-gray-500 font-semibold mt-0.5">
-                  Familias Ayudadas
-                </div>
-              </div>
-              <div className="w-px bg-gray-300" />
-              <div>
-                <div className="text-4xl font-black text-[#45B8E8]">10+</div>
-                <div className="text-sm text-gray-500 font-semibold mt-0.5">
-                  Aliados Estratégicos
-                </div>
-              </div>
-              <div className="w-px bg-gray-300" />
-              <div>
-                <div className="text-4xl font-black text-[#E8342E]">5+</div>
-                <div className="text-sm text-gray-500 font-semibold mt-0.5">
-                  Años de Servicio
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* ── Logo / imagen ── */}
