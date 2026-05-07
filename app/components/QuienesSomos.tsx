@@ -71,10 +71,7 @@ const pilares = [
 
 export default function QuienesSomos() {
   return (
-    <section
-      id="nosotros"
-      className="relative py-28 bg-white overflow-hidden"
-    >
+    <section id="nosotros" className="relative py-28 bg-white overflow-hidden">
       {/* Decorative background */}
       <div
         className="absolute -top-20 -left-20 w-80 h-80 rounded-full opacity-[0.07] pointer-events-none"
@@ -128,28 +125,6 @@ export default function QuienesSomos() {
               Cada jornada, cada donación y cada voluntario son un eslabón en
               esta cadena de bienestar que crece día a día.
             </p>
-
-            {/* Mini stats */}
-            <div className="grid grid-cols-3 gap-4 max-w-md">
-              <div className="text-center bg-[#F3F4F6] rounded-2xl py-4 px-2">
-                <div className="text-2xl font-black text-[#45B8E8]">+5</div>
-                <div className="text-[11px] text-gray-500 font-bold mt-1 leading-tight">
-                  Años de servicio
-                </div>
-              </div>
-              <div className="text-center bg-[#F3F4F6] rounded-2xl py-4 px-2">
-                <div className="text-2xl font-black text-[#F5A52B]">+10</div>
-                <div className="text-[11px] text-gray-500 font-bold mt-1 leading-tight">
-                  Aliados activos
-                </div>
-              </div>
-              <div className="text-center bg-[#F3F4F6] rounded-2xl py-4 px-2">
-                <div className="text-2xl font-black text-[#E8342E]">+500</div>
-                <div className="text-[11px] text-gray-500 font-bold mt-1 leading-tight">
-                  Vidas tocadas
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right: visual quote card */}

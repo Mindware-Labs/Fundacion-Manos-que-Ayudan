@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   title: "Fundación Manos que Ayudan",
   description:
     "Organización sin fines de lucro dedicada a mejorar la calidad de vida de comunidades más vulnerables.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
