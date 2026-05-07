@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Footer() {
   return (
     <footer id="contacto" className="bg-[#1B2D6B] text-white">
@@ -24,13 +22,22 @@ export default function Footer() {
         <div className="grid lg:grid-cols-3 gap-12">
           {/* ── Izquierda: Logo + Descripción + Redes ── */}
           <div>
-            <Image
-              src="/logo.png"
-              alt="Fundación Manos que Ayudan"
-              width={180}
-              height={65}
-              className="h-14 w-auto object-contain brightness-0 invert mb-5"
-            />
+            {/* Brand text */}
+            <div className="mb-5">
+              <p className="text-white font-black text-lg leading-none tracking-tight">
+                Fundación
+              </p>
+              <p
+                className="text-white font-black leading-tight"
+                style={{
+                  fontFamily: "var(--font-dancing)",
+                  fontSize: "2rem",
+                  lineHeight: 1.1,
+                }}
+              >
+                Manos que Ayudan
+              </p>
+            </div>
             <p className="text-white/65 text-sm leading-relaxed mb-6">
               Dedicados a mejorar la calidad de vida de las comunidades más
               vulnerables, un paso a la vez.

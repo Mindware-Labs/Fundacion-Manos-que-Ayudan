@@ -95,10 +95,7 @@ export default function Galeria() {
         {/* ── Carrusel ── */}
         <div className="relative max-w-5xl mx-auto">
           {/* Viewport */}
-          <div
-            className="relative overflow-hidden rounded-3xl shadow-2xl"
-            style={{ aspectRatio: "16 / 7" }}
-          >
+          <div className="relative overflow-hidden rounded-3xl shadow-2xl aspect-4/3 sm:aspect-16/7">
             {/* Track */}
             <div
               className="flex h-full transition-transform duration-500 ease-in-out"
@@ -127,7 +124,7 @@ export default function Galeria() {
                       fill="none"
                       stroke={slide.iconColor}
                       strokeWidth={0.4}
-                      className="w-72 h-72 opacity-25"
+                      className="w-40 h-40 sm:w-72 sm:h-72 opacity-25"
                     >
                       <path
                         strokeLinecap="round"
@@ -164,16 +161,16 @@ export default function Galeria() {
                   </div>
 
                   {/* Bottom info */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/65 to-transparent p-7">
-                    <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 mb-2">
+                  <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/65 to-transparent px-4 py-4 sm:p-7">
+                    <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 mb-1.5">
                       <span className="text-white text-xs font-bold">
                         {slide.label}
                       </span>
                     </div>
-                    <h3 className="text-white text-2xl font-black mb-1 drop-shadow">
+                    <h3 className="text-white text-lg sm:text-2xl font-black mb-1 drop-shadow leading-tight">
                       {slide.title}
                     </h3>
-                    <p className="text-white/80 text-sm leading-relaxed max-w-2xl">
+                    <p className="hidden sm:block text-white/80 text-sm leading-relaxed max-w-2xl">
                       {slide.description}
                     </p>
                   </div>
@@ -184,12 +181,12 @@ export default function Galeria() {
             {/* ← Flecha izquierda (azul claro) */}
             <button
               onClick={prev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-200 z-10"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-200 z-10"
               style={{ background: "#45B8E8" }}
               aria-label="Anterior"
             >
               <svg
-                className="w-7 h-7 text-white"
+                className="w-5 h-5 sm:w-7 sm:h-7 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -206,12 +203,12 @@ export default function Galeria() {
             {/* → Flecha derecha (amarillo cálido) */}
             <button
               onClick={next}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-200 z-10"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-200 z-10"
               style={{ background: "#F5A52B" }}
               aria-label="Siguiente"
             >
               <svg
-                className="w-7 h-7 text-white"
+                className="w-5 h-5 sm:w-7 sm:h-7 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
