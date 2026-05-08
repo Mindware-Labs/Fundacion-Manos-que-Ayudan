@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Dancing_Script, Nunito } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import ScrollReveal from "./components/ScrollReveal";
 
@@ -10,17 +10,10 @@ const nunito = Nunito({
   display: "swap",
 });
 
-const dancingScript = Dancing_Script({
-  variable: "--font-dancing",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   title: "Fundación Manos que Ayudan",
   description:
-    "Organización sin fines de lucro dedicada a mejorar la calidad de vida de comunidades más vulnerables.",
+    "Organización sin fines de lucro dedicada a mejorar la calidad de vida de comunidades vulnerables.",
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
@@ -33,11 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="es"
-      className={`${nunito.variable} ${dancingScript.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
+    <html lang="es" className={`${nunito.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col">
         <ScrollReveal />
         {children}
       </body>

@@ -98,30 +98,22 @@ export default function Navbar() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div
-            className={`relative flex h-[72px] items-center justify-between overflow-hidden rounded-2xl border px-4 transition-all duration-500 ${
+            className={`relative flex h-[72px] items-center justify-between overflow-hidden rounded-lg border px-4 transition-all duration-500 ${
               scrolled
-                ? "border-white/70 bg-white/85 shadow-2xl shadow-[#06153d]/15 backdrop-blur-2xl"
-                : "border-white/50 bg-white/70 shadow-xl shadow-[#06153d]/10 backdrop-blur-xl"
+                ? "border-[#dce5f2] bg-white/90 shadow-xl shadow-[#061e5c]/10 backdrop-blur-2xl"
+                : "border-white/70 bg-white/80 shadow-lg shadow-[#061e5c]/10 backdrop-blur-xl"
             }`}
           >
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent"
-            />
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -left-24 top-1/2 h-32 w-32 -translate-y-1/2 rounded-full bg-[#45B8E8]/10 blur-2xl"
-            />
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-24 top-1/2 h-32 w-32 -translate-y-1/2 rounded-full bg-[#F5A52B]/10 blur-2xl"
+              className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[#dce5f2]"
             />
 
             <Link
               href="/"
               className="group relative flex min-w-0 shrink-0 items-center gap-3"
             >
-              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-white to-[#F6F8FC] shadow-md shadow-[#1B2D6B]/10 ring-1 ring-[#1B2D6B]/10 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-[#F5A52B]/20 group-hover:ring-[#F5A52B]/40">
+              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-white shadow-sm ring-1 ring-[#061e5c]/10 transition-all duration-300 group-hover:ring-[#f8b133]/50">
                 <Image
                   src="/logo.png"
                   alt="Fundación Manos que Ayudan"
@@ -132,50 +124,29 @@ export default function Navbar() {
                 />
               </span>
               <span className="hidden min-w-0 sm:block">
-                <span className="flex items-center gap-1.5">
-                  <span className="block text-[11px] font-black uppercase tracking-[0.18em] leading-none text-[#1B2D6B]/70">
-                    Fundación
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="h-1 w-1 rounded-full bg-[#F5A52B]"
-                  />
+                  <span className="block text-[11px] font-extrabold uppercase leading-none text-[#6b7280]">
+                  Fundación
                 </span>
-                <span
-                  className="mt-1.5 block truncate text-xl leading-none text-[#F5A52B]"
-                  style={{ fontFamily: "var(--font-dancing)", fontWeight: 700 }}
-                >
+                <span className="mt-1.5 block truncate text-lg font-extrabold leading-none text-[#061e5c]">
                   Manos que Ayudan
                 </span>
               </span>
             </Link>
 
-            <div className="relative hidden items-center gap-0.5 rounded-2xl border border-[#1B2D6B]/8 bg-gradient-to-b from-white/80 to-[#F6F8FC]/80 p-1 shadow-inner shadow-[#1B2D6B]/[0.03] lg:flex">
+            <div className="relative hidden items-center gap-1 rounded-lg border border-[#dce5f2] bg-white/75 p-1 shadow-inner shadow-[#061e5c]/[0.03] lg:flex">
               {navLinks.map((link) => {
                 const isActive = active === link.href;
                 return (
                   <a
                     key={link.href}
                     href={link.href}
-                    className={`relative rounded-xl px-3.5 py-2 text-[13px] font-black tracking-wide transition-all duration-300 ${
+                    className={`relative rounded-md px-3.5 py-2 text-[13px] font-extrabold transition-all duration-300 ${
                       isActive
-                        ? "text-white"
-                        : "text-[#1B2D6B]/80 hover:text-[#1B2D6B]"
+                        ? "bg-[#061e5c] text-white shadow-md shadow-[#061e5c]/20"
+                        : "text-[#36425a] hover:bg-[#f1f7fe] hover:text-[#061e5c]"
                     }`}
                   >
-                    {isActive && (
-                      <span
-                        aria-hidden="true"
-                        className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#1B2D6B] to-[#243879] shadow-lg shadow-[#1B2D6B]/30"
-                      />
-                    )}
-                    <span className="relative">{link.label}</span>
-                    {isActive && (
-                      <span
-                        aria-hidden="true"
-                        className="absolute -bottom-0.5 left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-full bg-[#F5A52B]"
-                      />
-                    )}
+                    {link.label}
                   </a>
                 );
               })}
@@ -183,14 +154,10 @@ export default function Navbar() {
 
             <a
               href="#contacto"
-              className="group relative hidden items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-br from-[#F5A52B] via-[#F5A52B] to-[#E89518] px-5 py-2.5 text-sm font-black text-[#10235f] shadow-lg shadow-[#F5A52B]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#F5A52B]/40 lg:inline-flex"
+              className="hidden items-center gap-2 rounded-md bg-[#f8b133] px-5 py-2.5 text-sm font-extrabold text-[#061e5c] shadow-md shadow-[#f8b133]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d79a27] lg:inline-flex"
             >
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full"
-              />
               <svg
-                className="relative h-4 w-4"
+                className="h-4 w-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -203,11 +170,11 @@ export default function Navbar() {
                   d="M3 7.5v9A2.5 2.5 0 0 0 5.5 19h13a2.5 2.5 0 0 0 2.5-2.5v-9M3 7.5A2.5 2.5 0 0 1 5.5 5h13A2.5 2.5 0 0 1 21 7.5M3 7.5l9 6 9-6"
                 />
               </svg>
-              <span className="relative">Contáctanos</span>
+              Contáctanos
             </a>
 
             <button
-              className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-white to-[#F3F6FB] text-[#1B2D6B] shadow-md shadow-[#1B2D6B]/10 ring-1 ring-[#1B2D6B]/10 transition active:scale-95 lg:hidden"
+              className="relative flex h-11 w-11 items-center justify-center rounded-md bg-white text-[#061e5c] shadow-sm ring-1 ring-[#061e5c]/10 transition active:scale-95 lg:hidden"
               onClick={() => setIsOpen(true)}
               aria-label="Abrir menú"
               aria-expanded={isOpen}
@@ -234,7 +201,7 @@ export default function Navbar() {
 
       <div
         onClick={() => setIsOpen(false)}
-        className={`fixed inset-0 z-40 bg-[#06153d]/55 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-[#061e5c]/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
           isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
         aria-hidden="true"
@@ -245,13 +212,13 @@ export default function Navbar() {
         role="dialog"
         aria-modal="true"
         aria-label="Menú principal"
-        className={`fixed right-0 top-0 z-50 flex h-full w-[86%] max-w-sm flex-col bg-gradient-to-b from-white via-white to-[#F6F8FC] shadow-2xl transition-transform duration-300 ease-out lg:hidden ${
+        className={`fixed right-0 top-0 z-50 flex h-full w-[86%] max-w-sm flex-col bg-[#f8fafe] shadow-2xl transition-transform duration-300 ease-out lg:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between border-b border-gray-100 px-6 py-5">
+        <div className="flex items-center justify-between border-b border-[#dce5f2] px-6 py-5">
           <div className="flex min-w-0 items-center gap-3">
-            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-white to-[#F6F8FC] shadow-md ring-1 ring-[#1B2D6B]/10">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-white shadow-sm ring-1 ring-[#061e5c]/10">
               <Image
                 src="/logo.png"
                 alt="Fundación Manos que Ayudan"
@@ -261,20 +228,17 @@ export default function Navbar() {
               />
             </span>
             <div className="min-w-0">
-              <p className="text-[11px] font-black uppercase tracking-[0.18em] leading-none text-[#1B2D6B]/70">
+              <p className="text-[11px] font-extrabold uppercase leading-none text-[#6b7280]">
                 Fundación
               </p>
-              <p
-                className="mt-1.5 truncate text-xl leading-none text-[#F5A52B]"
-                style={{ fontFamily: "var(--font-dancing)", fontWeight: 700 }}
-              >
+              <p className="mt-1.5 truncate text-lg font-extrabold leading-none text-[#061e5c]">
                 Manos que Ayudan
               </p>
             </div>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F3F6FB] text-[#1B2D6B] transition active:scale-95"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#f1f7fe] text-[#061e5c] transition active:scale-95"
             aria-label="Cerrar menú"
           >
             <svg
@@ -295,7 +259,7 @@ export default function Navbar() {
         </div>
 
         <nav className="flex-1 overflow-y-auto px-4 py-6">
-          <p className="px-3 text-[11px] font-black uppercase tracking-[0.18em] text-gray-400">
+          <p className="px-3 text-[11px] font-extrabold uppercase text-[#7b8794]">
             Navegación
           </p>
           <ul className="mt-3 flex flex-col gap-1">
@@ -306,16 +270,16 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`flex items-center justify-between rounded-xl px-4 py-3.5 font-black transition duration-200 ${
+                    className={`flex items-center justify-between rounded-md px-4 py-3.5 font-extrabold transition duration-200 ${
                       isActive
-                        ? "bg-gradient-to-br from-[#1B2D6B] to-[#243879] text-white shadow-lg shadow-[#1B2D6B]/25"
-                        : "text-[#1B2D6B] hover:bg-[#F3F6FB]"
+                        ? "bg-[#061e5c] text-white shadow-md shadow-[#061e5c]/20"
+                        : "text-[#061e5c] hover:bg-[#f1f7fe]"
                     }`}
                   >
                     <span className="flex min-w-0 items-center gap-3">
                       <span
                         className={`w-6 shrink-0 text-xs ${
-                          isActive ? "text-[#F5A52B]" : "text-gray-300"
+                          isActive ? "text-[#f8b133]" : "text-[#b7c0cc]"
                         }`}
                       >
                         0{i + 1}
@@ -345,18 +309,14 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        <div className="border-t border-gray-100 p-5">
+        <div className="border-t border-[#dce5f2] p-5">
           <a
             href="#contacto"
             onClick={() => setIsOpen(false)}
-            className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-br from-[#F5A52B] via-[#F5A52B] to-[#E89518] px-6 py-3.5 text-sm font-black text-[#10235f] shadow-lg shadow-[#F5A52B]/30 transition active:scale-[0.98]"
+            className="flex items-center justify-center gap-2 rounded-md bg-[#f8b133] px-6 py-3.5 text-sm font-extrabold text-[#061e5c] shadow-md shadow-[#f8b133]/20 transition active:scale-[0.98]"
           >
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full"
-            />
             <svg
-              className="relative h-4 w-4"
+              className="h-4 w-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -369,7 +329,7 @@ export default function Navbar() {
                 d="M3 7.5v9A2.5 2.5 0 0 0 5.5 19h13a2.5 2.5 0 0 0 2.5-2.5v-9M3 7.5A2.5 2.5 0 0 1 5.5 5h13A2.5 2.5 0 0 1 21 7.5M3 7.5l9 6 9-6"
               />
             </svg>
-            <span className="relative">Contáctanos</span>
+            Contáctanos
           </a>
         </div>
       </aside>

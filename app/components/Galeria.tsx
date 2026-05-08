@@ -8,7 +8,7 @@ const galleryImages: GalleryImage[] = [
     label: "Imagen 1",
     position: "50% 46%",
     fit: "contain",
-    accent: "#F5A52B",
+    accent: "#f8b133",
   },
   {
     number: 2,
@@ -17,7 +17,7 @@ const galleryImages: GalleryImage[] = [
     label: "Imagen 2",
     position: "50% 42%",
     fit: "contain",
-    accent: "#E8342E",
+    accent: "#ed1c24",
   },
   {
     number: 3,
@@ -26,7 +26,7 @@ const galleryImages: GalleryImage[] = [
     label: "Imagen 3",
     position: "50% 42%",
     fit: "contain",
-    accent: "#45B8E8",
+    accent: "#55bfe6",
   },
 ];
 
@@ -34,41 +34,26 @@ export default function Galeria() {
   return (
     <section
       id="galeria"
-      className="relative overflow-hidden bg-gradient-to-b from-[#F6F8FC] via-[#F6F8FC] to-white py-24 sm:py-28"
+      className="relative overflow-hidden bg-[#f4f7fb] py-24 sm:py-28"
     >
-      <div className="absolute inset-0 section-grid opacity-55" />
+      <div className="absolute inset-0 section-grid opacity-40" />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-32 left-0 h-[420px] w-[420px] rounded-full bg-[#E8342E]/8 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 right-0 h-[420px] w-[420px] rounded-full bg-[#F5A52B]/8 blur-3xl"
+        className="absolute inset-x-0 top-0 h-px bg-[#dce5f2]"
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-14 max-w-3xl text-center reveal-up">
-          <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#E8342E]/20 bg-white px-4 py-2 shadow-sm shadow-[#E8342E]/10">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#E8342E]/60" />
-              <span className="relative h-2.5 w-2.5 rounded-full bg-[#E8342E]" />
-            </span>
-            <span className="text-[12px] font-black uppercase tracking-[0.18em] text-[#1B2D6B]">
-              Galería oficial
-            </span>
+          <div className="mb-6 inline-flex items-center gap-3 rounded-md border border-[#dce5f2] bg-white px-4 py-2 text-sm font-extrabold text-[#ed1c24] shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-[#ed1c24]" />
+            Galería oficial
           </div>
-          <h2 className="text-4xl font-black leading-[1.05] tracking-tight text-[#1B2D6B] lg:text-[56px] lg:leading-[1.02]">
-            Imágenes que{" "}
-            <span
-              className="bg-gradient-to-r from-[#E8342E] via-[#FF6A6A] to-[#E8342E] bg-clip-text text-transparent"
-              style={{ fontFamily: "var(--font-dancing)", fontWeight: 700 }}
-            >
-              hablan por sí solas
-            </span>
+          <h2 className="text-4xl font-extrabold leading-[1.08] text-[#061e5c] lg:text-[54px] lg:leading-[1.03]">
+            Evidencia visual de nuestro trabajo institucional.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg font-medium leading-8 text-gray-500">
+          <p className="mx-auto mt-6 max-w-2xl text-lg font-semibold leading-8 text-[#64748b]">
             Una mirada cuidada al trabajo diario de la Fundación Manos que
-            Ayudan.
+            Ayudan y a las alianzas que hacen posible cada entrega.
           </p>
         </div>
 

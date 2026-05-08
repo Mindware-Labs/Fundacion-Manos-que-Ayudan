@@ -59,21 +59,21 @@ export default function GaleriaCarousel({
 
   if (total === 0) {
     return (
-      <div className="mx-auto max-w-5xl rounded-xl border border-dashed border-navy/25 bg-white px-6 py-16 text-center shadow-sm">
-        <p className="font-extrabold text-navy">
+      <div className="mx-auto max-w-5xl rounded-lg border border-dashed border-[#061e5c]/25 bg-white px-6 py-16 text-center shadow-sm">
+        <p className="font-extrabold text-[#061e5c]">
           Agrega imágenes a la carpeta `public` para alimentar esta galería.
         </p>
       </div>
     );
   }
 
-  const activeAccent = activeImage?.accent ?? "#45B8E8";
+  const activeAccent = activeImage?.accent ?? "#55bfe6";
 
   return (
     <div className="gallery-shell mx-auto max-w-6xl">
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
         <div
-          className={`relative overflow-hidden rounded-2xl border border-white/80 bg-[#081a48] shadow-[0_28px_80px_-34px_rgba(27,45,107,0.7)] ${aspectRatio}`}
+          className={`relative overflow-hidden rounded-lg border border-[#dce5f2] bg-[#061e5c] shadow-[0_28px_80px_-40px_rgba(6,30,92,0.8)] ${aspectRatio}`}
         >
           {images.map((image, i) => {
             const isActive = i === active;
@@ -95,17 +95,17 @@ export default function GaleriaCarousel({
                   alt=""
                   fill
                   sizes="(max-width: 1024px) 100vw, 780px"
-                  className="object-cover opacity-45 blur-2xl scale-110"
+                  className="scale-110 object-cover opacity-40 blur-2xl"
                   style={{ objectPosition: image.position ?? "center" }}
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,26,72,0.18)_0%,rgba(8,26,72,0.68)_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,30,92,0.22)_0%,rgba(6,30,92,0.72)_100%)]" />
                 <div className="absolute inset-2 sm:inset-4">
                   <Image
                     src={image.src}
                     alt={image.alt}
                     fill
                     sizes="(max-width: 1024px) 94vw, 760px"
-                    className={`${fitClass} rounded-xl shadow-2xl shadow-black/25 transition duration-[6500ms] ease-out ${
+                    className={`${fitClass} rounded-md shadow-2xl shadow-black/25 transition duration-[6500ms] ease-out ${
                       isActive ? "scale-[1.01]" : "scale-100"
                     }`}
                     style={{ objectPosition: image.position ?? "center" }}
@@ -116,18 +116,18 @@ export default function GaleriaCarousel({
             );
           })}
 
-          <div className="absolute left-3 top-3 rounded-full border border-white/20 bg-black/35 px-3 py-1.5 text-xs font-black text-white shadow-lg backdrop-blur-md sm:left-5 sm:top-5">
+          <div className="absolute left-3 top-3 rounded-md border border-white/20 bg-[#061e5c]/70 px-3 py-1.5 text-xs font-extrabold text-white shadow-md backdrop-blur-md sm:left-5 sm:top-5">
             {active + 1}/{total}
           </div>
 
           {showLabel && activeImage?.title && (
             <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-auto">
-              <div className="inline-flex max-w-full items-center gap-2 rounded-xl border border-white/16 bg-black/38 px-4 py-3 text-white shadow-xl backdrop-blur-md">
+              <div className="inline-flex max-w-full items-center gap-2 rounded-md border border-white/20 bg-[#061e5c]/70 px-4 py-3 text-white shadow-xl backdrop-blur-md">
                 <span
                   className="h-2.5 w-2.5 shrink-0 rounded-full"
                   style={{ backgroundColor: activeAccent }}
                 />
-                <span className="truncate text-sm font-black">
+                <span className="truncate text-sm font-extrabold">
                   {activeImage.title}
                 </span>
               </div>
@@ -138,7 +138,7 @@ export default function GaleriaCarousel({
             <>
               <button
                 onClick={prev}
-                className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-xl border border-white/20 bg-white/90 text-[#1B2D6B] shadow-xl transition duration-200 hover:-translate-x-0.5 hover:bg-white sm:left-5 sm:h-12 sm:w-12"
+                className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-md border border-white/20 bg-white/90 text-[#061e5c] shadow-lg transition duration-200 hover:-translate-x-0.5 hover:bg-white sm:left-5 sm:h-12 sm:w-12"
                 aria-label="Imagen anterior"
                 title="Imagen anterior"
               >
@@ -160,7 +160,7 @@ export default function GaleriaCarousel({
 
               <button
                 onClick={next}
-                className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-xl border border-white/20 bg-white/90 text-[#1B2D6B] shadow-xl transition duration-200 hover:translate-x-0.5 hover:bg-white sm:right-5 sm:h-12 sm:w-12"
+                className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-md border border-white/20 bg-white/90 text-[#061e5c] shadow-lg transition duration-200 hover:translate-x-0.5 hover:bg-white sm:right-5 sm:h-12 sm:w-12"
                 aria-label="Imagen siguiente"
                 title="Imagen siguiente"
               >
@@ -183,17 +183,14 @@ export default function GaleriaCarousel({
           )}
         </div>
 
-        <aside className="rounded-2xl border border-[#1B2D6B]/10 bg-white/88 p-5 shadow-[0_24px_60px_-38px_rgba(27,45,107,0.8)] backdrop-blur-xl">
+        <aside className="rounded-lg border border-[#dce5f2] bg-white/90 p-5 shadow-[0_24px_60px_-42px_rgba(6,30,92,0.8)] backdrop-blur-xl">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p
-                className="text-xs font-black uppercase text-[#1B2D6B]/50"
-                style={{ letterSpacing: 0 }}
-              >
+              <p className="text-xs font-extrabold uppercase text-[#7b8794]">
                 Registro {String(active + 1).padStart(2, "0")}
               </p>
               {activeImage?.title && (
-                <h3 className="mt-2 text-2xl font-black leading-tight text-[#1B2D6B]">
+                <h3 className="mt-2 text-2xl font-extrabold leading-tight text-[#061e5c]">
                   {activeImage.title}
                 </h3>
               )}
@@ -205,14 +202,14 @@ export default function GaleriaCarousel({
           </div>
 
           {activeImage?.description && (
-            <p className="mt-4 text-sm font-semibold leading-6 text-gray-500">
+            <p className="mt-4 text-sm font-semibold leading-6 text-[#64748b]">
               {activeImage.description}
             </p>
           )}
 
           {total > 1 && (
             <div className="mt-6">
-              <div className="h-1.5 overflow-hidden rounded-full bg-[#E7ECF5]">
+              <div className="h-1.5 overflow-hidden rounded-full bg-[#e5edf8]">
                 <div
                   key={`${active}-${activeImage?.src}`}
                   className="gallery-progress h-full rounded-full"
@@ -223,7 +220,7 @@ export default function GaleriaCarousel({
               <div className="mt-5 flex gap-3">
                 <button
                   onClick={prev}
-                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#1B2D6B]/10 bg-[#F6F8FC] text-[#1B2D6B] transition hover:bg-[#1B2D6B] hover:text-white"
+                  className="flex h-11 w-11 items-center justify-center rounded-md border border-[#061e5c]/10 bg-[#f4f7fb] text-[#061e5c] transition hover:bg-[#061e5c] hover:text-white"
                   aria-label="Imagen anterior"
                   title="Imagen anterior"
                 >
@@ -244,7 +241,7 @@ export default function GaleriaCarousel({
                 </button>
                 <button
                   onClick={next}
-                  className="flex h-11 flex-1 items-center justify-center gap-2 rounded-xl bg-[#1B2D6B] px-4 text-sm font-black text-white shadow-lg shadow-[#1B2D6B]/20 transition hover:bg-[#122257]"
+                  className="flex h-11 flex-1 items-center justify-center gap-2 rounded-md bg-[#061e5c] px-4 text-sm font-extrabold text-white shadow-md shadow-[#061e5c]/20 transition hover:bg-[#03154a]"
                 >
                   Siguiente
                   <svg
@@ -272,9 +269,9 @@ export default function GaleriaCarousel({
                 <button
                   key={image.src}
                   onClick={() => goTo(i)}
-                  className={`relative aspect-[5/4] overflow-hidden rounded-lg bg-[#081a48] transition duration-300 ${
+                  className={`relative aspect-[5/4] overflow-hidden rounded-md bg-[#061e5c] transition duration-300 ${
                     i === active
-                      ? "ring-2 ring-[#1B2D6B] ring-offset-2"
+                      ? "ring-2 ring-[#061e5c] ring-offset-2"
                       : "opacity-65 hover:opacity-100"
                   }`}
                   aria-label={`Ir a imagen ${i + 1}`}

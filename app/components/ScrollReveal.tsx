@@ -63,7 +63,7 @@ export default function ScrollReveal() {
     <div
       aria-hidden="true"
       id="scroll-progress-bar"
-      className="pointer-events-none fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-gradient-to-r from-[#45B8E8] via-[#F5A52B] to-[#E8342E] shadow-[0_0_10px_rgba(245,165,43,0.45)]"
+      className="pointer-events-none fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-gradient-to-r from-[#55bfe6] via-[#f8b133] to-[#ed1c24] shadow-[0_0_10px_rgba(85,191,230,0.28)]"
       style={{ transform: "scaleX(0)" }}
     />
   );
