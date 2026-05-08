@@ -1,155 +1,99 @@
+import Image from "next/image";
+
 const servicios = [
   {
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        className="w-10 h-10"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v10m0 0H5a2 2 0 00-2 2v4a2 2 0 002 2h4m0-6h10m0 0a2 2 0 012 2v4a2 2 0 01-2 2H9m4-6v6"
-        />
-      </svg>
-    ),
+    image: "/ayuda1.png",
+    imageAlt: "Mesa organizada con medicamentos e insumos de salud",
+    position: "50% 58%",
     color: "#45B8E8",
-    bg: "#EBF8FF",
-    title: "Donación de Medicamentos",
-    text: "Proporcionamos medicinas esenciales a quienes más lo necesitan, colaborando con hospitales como El Buen Samaritano.",
+    label: "Salud",
+    title: "Donación de medicamentos",
+    text: "Proporcionamos medicinas esenciales a personas y centros que necesitan apoyo inmediato.",
   },
   {
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        className="w-10 h-10"
-      >
-        <circle cx="12" cy="4" r="2" />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M6 12h6m0 0l1.5 6H8.5M12 12V8m6 4a2 2 0 100-4 2 2 0 000 4zm0 0v8"
-        />
-      </svg>
-    ),
+    image: "/ayuda7.png",
+    imageAlt: "Entrega de silla de ruedas a una persona mayor",
+    position: "50% 42%",
     color: "#F5A52B",
-    bg: "#FFFBEB",
-    title: "Equipos de Movilidad",
-    text: "Sillas de ruedas, muletas y bastones para devolver la independencia a quienes más lo necesitan.",
+    label: "Movilidad",
+    title: "Equipos de movilidad",
+    text: "Sillas de ruedas, muletas y bastones para recuperar independencia y mejorar traslados.",
   },
   {
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        className="w-10 h-10"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-        />
-      </svg>
-    ),
+    image: "/ayuda5.png",
+    imageAlt: "Equipo comunitario en una entrega de medicamentos",
+    position: "50% 52%",
     color: "#E8342E",
-    bg: "#FFF5F5",
-    title: "Apoyo a la Vejez",
-    text: "Asistencia integral a hogares de ancianos, como Nuestra Señora del Carmen en Higüey.",
+    label: "Comunidad",
+    title: "Apoyo a centros locales",
+    text: "Trabajamos con equipos comunitarios para entregar ayuda de forma organizada y cercana.",
   },
   {
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        className="w-10 h-10"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-        />
-      </svg>
-    ),
+    image: "/img33.png",
+    imageAlt: "Representantes en una entrega institucional",
+    position: "50% 42%",
     color: "#1B2D6B",
-    bg: "#EEF0F8",
-    title: "Alianzas Estratégicas",
-    text: "Trabajando junto a Fundación Montilla y otras instituciones para un mayor impacto comunitario.",
+    label: "Alianzas",
+    title: "Gestión institucional",
+    text: "Creamos alianzas estratégicas para sostener programas con mayor alcance e impacto.",
   },
 ];
 
 export default function NuestraLabor() {
   return (
-    <section id="labor" className="py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[#EBF8FF] rounded-full px-4 py-2 mb-5">
-            <span className="w-2 h-2 rounded-full bg-[#45B8E8]" />
-            <span className="text-sm font-bold text-[#45B8E8]">
-              Nuestra Labor
+    <section id="labor" className="relative overflow-hidden bg-[#F6F8FC] py-24 sm:py-28">
+      <div className="absolute inset-0 section-grid opacity-45" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-14 max-w-3xl text-center reveal-up">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#F5A52B]/20 bg-white px-4 py-2 shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-[#F5A52B]" />
+            <span className="text-sm font-black text-[#1B2D6B]">
+              Nuestra labor
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-black text-[#1B2D6B] mb-5 leading-tight">
-            Transformando Vidas con{" "}
-            <span
-              style={{
-                fontFamily: "var(--font-dancing)",
-                color: "#F5A52B",
-                fontSize: "1.05em",
-              }}
-            >
-              Salud y Dignidad
-            </span>
+          <h2 className="text-4xl font-black leading-tight text-[#1B2D6B] lg:text-5xl">
+            Programas con impacto visible
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
-            Cada acción que realizamos es un paso hacia una sociedad más justa y
-            equitativa para todos.
+          <p className="mx-auto mt-5 max-w-2xl text-lg font-semibold leading-8 text-gray-500">
+            Organizamos cada entrega para que la ayuda llegue con orden,
+            contexto y continuidad a quienes más la necesitan.
           </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {servicios.map((s, i) => (
-            <div
-              key={i}
-              className="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-2 overflow-hidden"
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 reveal-up reveal-delay-2">
+          {servicios.map((servicio) => (
+            <article
+              key={servicio.title}
+              className="group overflow-hidden rounded-2xl border border-white bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#1B2D6B]/10"
             >
-              {/* Corner accent */}
-              <div
-                className="absolute top-0 right-0 w-28 h-28 rounded-full opacity-10 -translate-y-10 translate-x-10 pointer-events-none"
-                style={{ background: s.color }}
-              />
-
-              {/* Icon container */}
-              <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
-                style={{ background: s.bg, color: s.color }}
-              >
-                {s.icon}
+              <div className="relative aspect-[4/3] overflow-hidden bg-[#081a48]">
+                <Image
+                  src={servicio.image}
+                  alt={servicio.imageAlt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
+                  className="object-cover transition duration-700 group-hover:scale-[1.04]"
+                  style={{ objectPosition: servicio.position }}
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,26,72,0)_30%,rgba(8,26,72,0.72)_100%)]" />
+                <span
+                  className="absolute bottom-3 left-3 rounded-lg px-3 py-1.5 text-xs font-black text-white shadow-lg"
+                  style={{ backgroundColor: servicio.color }}
+                >
+                  {servicio.label}
+                </span>
               </div>
 
-              <h3 className="text-[1.05rem] font-extrabold text-[#1B2D6B] mb-3 leading-snug">
-                {s.title}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{s.text}</p>
-
-              {/* Bottom hover bar */}
-              <div
-                className="absolute bottom-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-3xl"
-                style={{
-                  background: `linear-gradient(90deg, ${s.color}, transparent)`,
-                }}
-              />
-            </div>
+              <div className="p-6">
+                <h3 className="text-lg font-black leading-snug text-[#1B2D6B]">
+                  {servicio.title}
+                </h3>
+                <p className="mt-3 text-sm font-semibold leading-7 text-gray-500">
+                  {servicio.text}
+                </p>
+              </div>
+            </article>
           ))}
         </div>
       </div>

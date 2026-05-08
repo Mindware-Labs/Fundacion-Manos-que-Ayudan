@@ -30,6 +30,110 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.hero-photo {
+  animation: hero-zoom 18s ease-out both;
+}
+
+.hero-texture {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(90deg, #000 0%, transparent 82%);
+}
+
+.section-grid {
+  background-image:
+    linear-gradient(rgba(27,45,107,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27,45,107,0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 24%, #000 76%, transparent 100%);
+}
+
+.gallery-shell {
+  animation: fade-up 700ms ease both;
+}
+
+.gallery-progress {
+  transform-origin: left;
+  animation: gallery-progress 6500ms linear both;
+}
+
+.reveal-up {
+  animation: fade-up 720ms ease both;
+}
+
+.reveal-delay-2 {
+  animation-delay: 140ms;
+}
+
+.reveal-delay-3 {
+  animation-delay: 240ms;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gallery-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-scroll-dot {
+  animation: hero-scroll 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes hero-scroll {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 ::selection {
   background: #45B8E8;
   color: #ffffff;

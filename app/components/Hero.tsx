@@ -1,94 +1,106 @@
+import Image from "next/image";
+
+const focusItems = [
+  { label: "Medicamentos", icon: "M19 8h-2V6a4 4 0 1 0-8 0v2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6-2a2 2 0 1 1 4 0v2h-4V6zm-4 9h3v3h2v-3h3v-2h-3v-3h-2v3h-3v2z" },
+  { label: "Movilidad", icon: "M17 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-2 14.5h-2v-3.5L9.5 14 7 16.5 5.5 15l3-3 1.5-1.5L13 9c.5-.3 1.1-.3 1.6 0l2.4 2 2.5 1-.7 1.7-2.6-1L15 12v8zm-7-9c-.7 0-1.3-.4-1.6-1l-1.7.5L4 9.5l2-.6c.4-.5 1-.9 1.7-1l3.5-1c.7-.2 1.5.1 1.9.7l1.4 2.4-1.7 1L11.5 9 8 11z" },
+  { label: "Acompañamiento", icon: "M12 5.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm-7 13c0-3 4-4.5 7-4.5s7 1.5 7 4.5V20H5v-1.5z" },
+];
+
 export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(135deg, #FFF8ED 0%, #FFF0D6 30%, #FDE8C8 60%, #FFDFC0 100%)",
-      }}
+      className="relative min-h-[100svh] overflow-hidden bg-[#071641] text-white"
     >
-      {/* Decorative blobs */}
-      <div
-        className="absolute top-24 right-10 w-72 h-72 rounded-full opacity-25 pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, #F5A52B 0%, transparent 70%)",
-        }}
-      />
-      <div
-        className="absolute bottom-24 right-48 w-56 h-56 rounded-full opacity-20 pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, #45B8E8 0%, transparent 70%)",
-        }}
-      />
-      <div
-        className="absolute top-48 left-8 w-40 h-40 rounded-full opacity-15 pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, #E8342E 0%, transparent 70%)",
-        }}
+      <Image
+        src="/ayuda4.png"
+        alt="Voluntarios de la Fundación Manos que Ayudan durante una jornada de donación"
+        fill
+        sizes="100vw"
+        className="hero-photo object-cover"
+        style={{ objectPosition: "58% 42%" }}
+        preload
       />
 
-      {/* Dot pattern overlay */}
+      <div className="absolute inset-0 bg-[#071641]/25" />
+      <div className="absolute inset-0 bg-[linear-gradient(95deg,rgba(7,22,65,0.99)_0%,rgba(7,22,65,0.94)_30%,rgba(7,22,65,0.72)_55%,rgba(7,22,65,0.18)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,22,65,0.45)_0%,rgba(7,22,65,0)_38%,rgba(7,22,65,0)_70%,rgba(255,255,255,0.96)_100%)]" />
+      <div className="absolute inset-0 hero-texture opacity-30" />
+
       <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, #1B2D6B 1.5px, transparent 1.5px)",
-          backgroundSize: "32px 32px",
-        }}
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-32 top-1/3 h-[420px] w-[420px] rounded-full bg-[#45B8E8]/15 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[-10%] top-[15%] h-[360px] w-[360px] rounded-full bg-[#F5A52B]/15 blur-3xl"
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-24">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* ── Texto ── */}
-          <div className="text-left">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 mb-8 shadow-sm border border-white/60">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#E8342E] animate-pulse" />
-              <span className="text-sm font-bold text-[#1B2D6B]">
-                Organización Sin Fines de Lucro
+      <div className="relative z-10 flex min-h-[100svh] items-center">
+        <div className="mx-auto w-full max-w-7xl px-4 pb-32 pt-32 sm:px-6 lg:px-8 lg:pt-40">
+          <div className="max-w-3xl reveal-up">
+            <div className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 py-2 pl-2 pr-4 shadow-xl shadow-black/20 backdrop-blur-md">
+              <span className="relative flex h-6 w-6 items-center justify-center">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#F5A52B]/60" />
+                <span className="relative h-2.5 w-2.5 rounded-full bg-[#F5A52B] shadow-[0_0_12px_rgba(245,165,43,0.8)]" />
+              </span>
+              <span className="text-[13px] font-black tracking-wide text-white/95">
+                Salud · Movilidad · Acompañamiento
               </span>
             </div>
 
-            {/* Heading */}
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black text-[#1B2D6B] leading-tight mb-6">
-              Mano a mano,{" "}
-              <span
-                style={{
-                  fontFamily: "var(--font-dancing)",
-                  background: "linear-gradient(90deg, #F5A52B, #E8342E)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                construyendo
+            <h1 className="text-5xl font-black leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[80px] lg:leading-[0.98]">
+              <span className="block">Manos que</span>
+              <span className="relative inline-block">
+                <span
+                  className="bg-gradient-to-r from-[#F5A52B] via-[#FFC061] to-[#F5A52B] bg-clip-text text-transparent"
+                  style={{
+                    fontFamily: "var(--font-dancing)",
+                    fontWeight: 700,
+                  }}
+                >
+                  transforman
+                </span>
+                <svg
+                  aria-hidden="true"
+                  className="absolute -bottom-3 left-0 h-3 w-full text-[#F5A52B]/60"
+                  viewBox="0 0 200 12"
+                  fill="none"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M2 8 Q 50 2, 100 6 T 198 4"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    fill="none"
+                  />
+                </svg>
               </span>
-              <br />
-              un futuro mejor.
+              <span className="block">vidas con dignidad.</span>
             </h1>
 
-            {/* Subtext */}
-            <p className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
-              <strong className="text-[#1B2D6B] font-extrabold">
-                Fundación Manos que Ayudan
-              </strong>
-              , es una organización sin fines de lucro dedicada a mejorar la
-              calidad de vida de comunidades más vulnerables.
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/85 sm:text-xl">
+              Llevamos medicamentos, equipos de movilidad y acompañamiento a las
+              comunidades que más lo necesitan — con cariño, sin condiciones.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 mb-14">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
-                href="#labor"
-                className="inline-flex items-center gap-2 bg-[#45B8E8] text-white font-extrabold px-8 py-4 rounded-full hover:bg-[#35a8d8] hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-base"
+                href="#ayudas"
+                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-br from-[#F5A52B] via-[#F5A52B] to-[#E89518] px-7 py-4 text-sm font-black text-[#10235f] shadow-xl shadow-[#F5A52B]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-[#F5A52B]/40"
               >
-                Descubre Nuestra Misión
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 group-hover:translate-x-full"
+                />
+                <span className="relative">Ver nuestras jornadas</span>
                 <svg
-                  className="w-5 h-5"
+                  className="relative h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -100,84 +112,76 @@ export default function Hero() {
               </a>
               <a
                 href="#nosotros"
-                className="inline-flex items-center gap-2 bg-white text-[#1B2D6B] font-extrabold px-8 py-4 rounded-full hover:bg-gray-50 hover:scale-105 transition-all duration-200 shadow-md text-base border border-[#1B2D6B]/15"
+                className="group inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-7 py-4 text-sm font-black text-white shadow-xl shadow-black/15 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/60 hover:bg-white hover:text-[#1B2D6B]"
               >
-                Conócenos
+                <svg
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+                Conoce la fundación
               </a>
             </div>
-          </div>
 
-          {/* ── Logo / imagen ── */}
-          <div className="flex justify-center items-center mt-10 lg:mt-0">
-            <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
-              {/* Main card */}
-              <div
-                className="relative h-[320px] sm:h-[400px] lg:h-[480px] rounded-[2.5rem] overflow-hidden shadow-2xl"
-                style={{
-                  background:
-                    "linear-gradient(160deg, #FDEEC8 0%, #FFDDB0 50%, #FFC990 100%)",
-                }}
-              >
-                {/* Logo centrado */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-10">
-                  <img
-                    src="/logo.png"
-                    alt="Fundación Manos que Ayudan"
-                    className="w-full max-w-[280px] object-contain drop-shadow-lg"
-                  />
-                </div>
-
-                {/* Decorative circles */}
-                <div className="absolute top-6 left-6 w-16 h-16 rounded-full bg-[#45B8E8]/25" />
-                <div className="absolute bottom-10 right-6 w-12 h-12 rounded-full bg-[#E8342E]/20" />
-                <div className="absolute bottom-6 left-10 w-8 h-8 rounded-full bg-[#F5A52B]/30" />
+            <div className="mt-12 reveal-up reveal-delay-2">
+              <div className="flex items-center gap-3">
+                <span className="h-px flex-1 bg-gradient-to-r from-transparent via-white/30 to-transparent sm:flex-none sm:w-12" />
+                <p className="text-[11px] font-black uppercase tracking-[0.22em] text-white/60">
+                  Áreas de impacto
+                </p>
+                <span className="h-px flex-1 bg-gradient-to-r from-white/30 via-white/30 to-transparent" />
               </div>
-
-              {/* Floating badge */}
-              <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-[#E8342E]/10 flex items-center justify-center shrink-0">
-                  <svg
-                    className="w-6 h-6 text-[#E8342E]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+              <ul className="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-3">
+                {focusItems.map((item) => (
+                  <li
+                    key={item.label}
+                    className="group flex items-center gap-3 rounded-xl border border-white/15 bg-white/8 px-4 py-3 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-[#F5A52B]/40 hover:bg-white/12"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-[#1B2D6B] font-extrabold text-sm">
-                    Impacto Real
-                  </p>
-                  <p className="text-gray-400 text-xs">
-                    Comunidades transformadas
-                  </p>
-                </div>
-              </div>
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-[#F5A52B]/25 to-[#F5A52B]/10 text-[#F5A52B] ring-1 ring-[#F5A52B]/30">
+                      <svg
+                        className="h-5 w-5"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path d={item.icon} />
+                      </svg>
+                    </span>
+                    <span className="text-sm font-black text-white">
+                      {item.label}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+
         </div>
       </div>
 
-      {/* Wave divider bottom */}
-      <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
-        <svg
-          viewBox="0 0 1440 72"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 72L60 64C120 56 240 40 360 36C480 32 600 40 720 44C840 48 960 48 1080 40C1200 32 1320 16 1380 8L1440 0V72H0Z"
-            fill="white"
-          />
-        </svg>
-      </div>
+      <a
+        href="#nosotros"
+        aria-label="Desplazar hacia abajo"
+        className="absolute bottom-32 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-white/70 transition hover:text-white lg:flex"
+      >
+        <span className="text-[10px] font-black uppercase tracking-[0.3em]">
+          Desliza
+        </span>
+        <span className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-white/40 p-1.5">
+          <span className="hero-scroll-dot h-1.5 w-1.5 rounded-full bg-white" />
+        </span>
+      </a>
+
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,#fff_88%)]" />
     </section>
   );
 }

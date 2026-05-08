@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito, Dancing_Script } from "next/font/google";
+import { Dancing_Script, Nunito } from "next/font/google";
 import "./globals.css";
 
 const nunito = Nunito({
