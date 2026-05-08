@@ -114,25 +114,41 @@ export default function GaleriaAyudas() {
   const images = getAyudaImages();
 
   return (
-    <section id="ayudas" className="relative overflow-hidden bg-white py-24 sm:py-28">
-      <div className="absolute inset-x-0 top-0 h-px bg-[#1B2D6B]/10" />
+    <section
+      id="ayudas"
+      className="relative overflow-hidden bg-white py-24 sm:py-28"
+    >
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#1B2D6B]/20 to-transparent" />
       <div className="absolute inset-0 section-grid opacity-35" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-32 right-0 h-[420px] w-[420px] rounded-full bg-[#45B8E8]/10 blur-3xl"
+      />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+        <div className="mb-14 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div className="reveal-up">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#45B8E8]/20 bg-[#EBF8FF] px-4 py-2 shadow-sm">
-              <span className="h-2 w-2 rounded-full bg-[#45B8E8]" />
-              <span className="text-sm font-black text-[#1B2D6B]">
+            <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-[#45B8E8]/25 bg-gradient-to-r from-[#EBF8FF] to-white px-4 py-2 shadow-sm shadow-[#45B8E8]/10">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#45B8E8]/60" />
+                <span className="relative h-2.5 w-2.5 rounded-full bg-[#45B8E8]" />
+              </span>
+              <span className="text-[12px] font-black uppercase tracking-[0.18em] text-[#1B2D6B]">
                 Jornadas de ayuda
               </span>
             </div>
-            <h2 className="text-4xl font-black leading-tight text-[#1B2D6B] lg:text-5xl">
-              Imágenes con mejor encuadre, contexto y presencia
+            <h2 className="text-4xl font-black leading-[1.05] tracking-tight text-[#1B2D6B] lg:text-[56px] lg:leading-[1.02]">
+              Donaciones, apoyo y{" "}
+              <span
+                className="bg-gradient-to-r from-[#45B8E8] via-[#7CD0F4] to-[#45B8E8] bg-clip-text text-transparent"
+                style={{ fontFamily: "var(--font-dancing)", fontWeight: 700 }}
+              >
+                esperanza
+              </span>
             </h2>
           </div>
 
-          <p className="max-w-2xl text-lg font-semibold leading-8 text-gray-500 reveal-up reveal-delay-2">
+          <p className="max-w-2xl text-lg font-medium leading-8 text-gray-500 reveal-up reveal-delay-2">
             Las fotos ahora se muestran completas cuando el formato lo pide,
             con fondo difuminado y miniaturas para navegar sin perder el foco
             del momento principal.

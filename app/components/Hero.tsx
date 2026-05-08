@@ -10,35 +10,26 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-[100svh] overflow-hidden bg-[#071641] text-white"
+      className="relative min-h-[100svh] overflow-hidden bg-gradient-to-br from-[#040d2c] via-[#071641] to-[#0C1A4A] text-white"
     >
-      <Image
-        src="/ayuda4.png"
-        alt="Voluntarios de la Fundación Manos que Ayudan durante una jornada de donación"
-        fill
-        sizes="100vw"
-        className="hero-photo object-cover"
-        style={{ objectPosition: "58% 42%" }}
-        preload
-      />
-
-      <div className="absolute inset-0 bg-[#071641]/25" />
-      <div className="absolute inset-0 bg-[linear-gradient(95deg,rgba(7,22,65,0.99)_0%,rgba(7,22,65,0.94)_30%,rgba(7,22,65,0.72)_55%,rgba(7,22,65,0.18)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,22,65,0.45)_0%,rgba(7,22,65,0)_38%,rgba(7,22,65,0)_70%,rgba(255,255,255,0.96)_100%)]" />
-      <div className="absolute inset-0 hero-texture opacity-30" />
+      <div className="absolute inset-0 hero-texture opacity-25" />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-32 top-1/3 h-[420px] w-[420px] rounded-full bg-[#45B8E8]/15 blur-3xl"
+        className="pointer-events-none absolute -left-32 top-1/4 h-[480px] w-[480px] rounded-full bg-[#45B8E8]/18 blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-[-10%] top-[15%] h-[360px] w-[360px] rounded-full bg-[#F5A52B]/15 blur-3xl"
+        className="pointer-events-none absolute right-[-15%] top-[10%] h-[520px] w-[520px] rounded-full bg-[#F5A52B]/22 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-[10%] left-[20%] h-[360px] w-[360px] rounded-full bg-[#1B2D6B]/40 blur-3xl"
       />
 
       <div className="relative z-10 flex min-h-[100svh] items-center">
-        <div className="mx-auto w-full max-w-7xl px-4 pb-32 pt-32 sm:px-6 lg:px-8 lg:pt-40">
-          <div className="max-w-3xl reveal-up">
+        <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 pb-32 pt-32 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14 lg:px-8 lg:pt-40">
+          <div className="reveal-up">
             <div className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/10 py-2 pl-2 pr-4 shadow-xl shadow-black/20 backdrop-blur-md">
               <span className="relative flex h-6 w-6 items-center justify-center">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#F5A52B]/60" />
@@ -49,7 +40,7 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="text-5xl font-black leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[80px] lg:leading-[0.98]">
+            <h1 className="text-5xl font-black leading-[1.02] tracking-tight text-white sm:text-6xl lg:text-[76px] lg:leading-[0.98]">
               <span className="block">Manos que</span>
               <span className="relative inline-block">
                 <span
@@ -80,7 +71,7 @@ export default function Hero() {
               <span className="block">vidas con dignidad.</span>
             </h1>
 
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-white/85 sm:text-xl">
+            <p className="mt-8 max-w-xl text-lg font-medium leading-8 text-white/85 sm:text-xl">
               Llevamos medicamentos, equipos de movilidad y acompañamiento a las
               comunidades que más lo necesitan — con cariño, sin condiciones.
             </p>
@@ -165,21 +156,61 @@ export default function Hero() {
             </div>
           </div>
 
+          <div className="relative flex items-center justify-center reveal-scale reveal-delay-2">
+            <div className="relative aspect-square w-full max-w-[440px] sm:max-w-[520px] lg:max-w-[560px]">
+              <div
+                aria-hidden="true"
+                className="hero-logo-pulse absolute inset-0 rounded-full bg-gradient-to-br from-[#F5A52B]/35 via-[#45B8E8]/20 to-transparent blur-3xl"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-[12%] rounded-full bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-sm"
+              />
+              <div
+                aria-hidden="true"
+                className="hero-logo-spin absolute inset-[6%] rounded-full border border-dashed border-white/15"
+              />
+              <div
+                aria-hidden="true"
+                className="hero-logo-spin-rev absolute inset-[18%] rounded-full border border-white/10"
+              />
+
+              <div className="hero-logo-float absolute inset-[18%] flex items-center justify-center">
+                <Image
+                  src="/logo.png"
+                  alt="Fundación Manos que Ayudan"
+                  width={520}
+                  height={520}
+                  className="h-full w-full object-contain drop-shadow-[0_30px_60px_rgba(245,165,43,0.4)]"
+                  preload
+                />
+              </div>
+
+              <span
+                aria-hidden="true"
+                className="absolute left-[8%] top-[20%] inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-white shadow-xl backdrop-blur-md"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-[#45B8E8]" />
+                Salud
+              </span>
+              <span
+                aria-hidden="true"
+                className="absolute right-[6%] top-[42%] inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-white shadow-xl backdrop-blur-md"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-[#F5A52B]" />
+                Movilidad
+              </span>
+              <span
+                aria-hidden="true"
+                className="absolute bottom-[14%] left-[16%] inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-white shadow-xl backdrop-blur-md"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-[#E8342E]" />
+                Acompañamiento
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-
-      <a
-        href="#nosotros"
-        aria-label="Desplazar hacia abajo"
-        className="absolute bottom-32 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 text-white/70 transition hover:text-white lg:flex"
-      >
-        <span className="text-[10px] font-black uppercase tracking-[0.3em]">
-          Desliza
-        </span>
-        <span className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-white/40 p-1.5">
-          <span className="hero-scroll-dot h-1.5 w-1.5 rounded-full bg-white" />
-        </span>
-      </a>
 
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-[linear-gradient(180deg,rgba(255,255,255,0)_0%,#fff_88%)]" />
     </section>

@@ -120,7 +120,7 @@ export default function GaleriaCarousel({
             {active + 1}/{total}
           </div>
 
-          {showLabel && activeImage && (
+          {showLabel && activeImage?.title && (
             <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-auto">
               <div className="inline-flex max-w-full items-center gap-2 rounded-xl border border-white/16 bg-black/38 px-4 py-3 text-white shadow-xl backdrop-blur-md">
                 <span
@@ -128,7 +128,7 @@ export default function GaleriaCarousel({
                   style={{ backgroundColor: activeAccent }}
                 />
                 <span className="truncate text-sm font-black">
-                  {activeImage.title ?? activeImage.label}
+                  {activeImage.title}
                 </span>
               </div>
             </div>
@@ -192,9 +192,11 @@ export default function GaleriaCarousel({
               >
                 Registro {String(active + 1).padStart(2, "0")}
               </p>
-              <h3 className="mt-2 text-2xl font-black leading-tight text-[#1B2D6B]">
-                {activeImage?.title ?? activeImage?.label}
-              </h3>
+              {activeImage?.title && (
+                <h3 className="mt-2 text-2xl font-black leading-tight text-[#1B2D6B]">
+                  {activeImage.title}
+                </h3>
+              )}
             </div>
             <span
               className="h-12 w-1.5 rounded-full"

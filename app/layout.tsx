@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Dancing_Script, Nunito } from "next/font/google";
 import "./globals.css";
+import ScrollReveal from "./components/ScrollReveal";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -36,7 +37,10 @@ export default function RootLayout({
       lang="es"
       className={`${nunito.variable} ${dancingScript.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ScrollReveal />
+        {children}
+      </body>
     </html>
   );
 }
