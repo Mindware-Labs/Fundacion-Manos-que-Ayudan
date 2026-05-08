@@ -1,11 +1,20 @@
 import Image from "next/image";
 
 const focusItems = [
-  { label: "Medicamentos", icon: "M19 8h-2V6a4 4 0 1 0-8 0v2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6-2a2 2 0 1 1 4 0v2h-4V6zm-4 9h3v3h2v-3h3v-2h-3v-3h-2v3h-3v2z" },
-  { label: "Movilidad", icon: "M17 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-2 14.5h-2v-3.5L9.5 14 7 16.5 5.5 15l3-3 1.5-1.5L13 9c.5-.3 1.1-.3 1.6 0l2.4 2 2.5 1-.7 1.7-2.6-1L15 12v8zm-7-9c-.7 0-1.3-.4-1.6-1l-1.7.5L4 9.5l2-.6c.4-.5 1-.9 1.7-1l3.5-1c.7-.2 1.5.1 1.9.7l1.4 2.4-1.7 1L11.5 9 8 11z" },
-  { label: "Acompañamiento", icon: "M12 5.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm-7 13c0-3 4-4.5 7-4.5s7 1.5 7 4.5V20H5v-1.5z" },
+  {
+    label: "Medicamentos",
+    icon: "M19 8h-2V6a4 4 0 1 0-8 0v2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2zm-6-2a2 2 0 1 1 4 0v2h-4V6zm-4 9h3v3h2v-3h3v-2h-3v-3h-2v3h-3v2z",
+  },
+  {
+    label: "Movilidad",
+    icon: "M17 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-2 14.5h-2v-3.5L9.5 14 7 16.5 5.5 15l3-3 1.5-1.5L13 9c.5-.3 1.1-.3 1.6 0l2.4 2 2.5 1-.7 1.7-2.6-1L15 12v8zm-7-9c-.7 0-1.3-.4-1.6-1l-1.7.5L4 9.5l2-.6c.4-.5 1-.9 1.7-1l3.5-1c.7-.2 1.5.1 1.9.7l1.4 2.4-1.7 1L11.5 9 8 11z",
+  },
+  {
+    label: "Acompañamiento",
+    icon: "M12 5.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm-7 13c0-3 4-4.5 7-4.5s7 1.5 7 4.5V20H5v-1.5z",
+  },
 ];
-
+// --- IGNORE START ---
 export default function Hero() {
   return (
     <section
