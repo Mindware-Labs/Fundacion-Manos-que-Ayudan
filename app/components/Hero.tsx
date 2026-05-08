@@ -115,8 +115,8 @@ export default function Hero() {
             </ul>
           </div>
 
-          <div className="relative reveal-scale reveal-delay-2">
-            <div className="relative mx-auto max-w-[540px] rounded-lg border border-[#dce5f2] bg-white/90 p-6 shadow-[0_30px_70px_-48px_rgba(6,30,92,0.85)] backdrop-blur">
+          <div className="relative">
+            <div className="hero-logo-panel relative mx-auto max-w-[540px] rounded-lg border border-[#dce5f2] bg-white/90 p-6 shadow-[0_30px_70px_-48px_rgba(6,30,92,0.85)] backdrop-blur">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#f8b133]" />
 
               <div className="flex min-h-[390px] items-center justify-center py-8 sm:min-h-[460px]">
@@ -125,7 +125,7 @@ export default function Hero() {
                   alt="Fundación Manos que Ayudan"
                   width={520}
                   height={520}
-                  className="h-full max-h-[390px] w-full object-contain drop-shadow-[0_24px_44px_rgba(6,30,92,0.18)] sm:max-h-[430px]"
+                  className="hero-logo-image h-full max-h-[390px] w-full object-contain drop-shadow-[0_24px_44px_rgba(6,30,92,0.18)] sm:max-h-[430px]"
                   preload
                 />
               </div>
