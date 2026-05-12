@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+
+const SWIPE_THRESHOLD = 40;
 
 export type GalleryImage = {
   number: number;
@@ -27,8 +29,11 @@ export default function GaleriaCarousel({
   showLabel = true,
 }: GaleriaCarouselProps) {
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const total = images.length;
   const active = total > 0 ? current % total : 0;
+  const swipeStartX = useRef<number | null>(null);
+  const swipeDelta = useRef(0);
 
   const activeImage = useMemo(() => images[active], [active, images]);
 
@@ -47,15 +52,41 @@ export default function GaleriaCarousel({
     setCurrent(i);
   };
 
-  useEffect(() => {
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (total < 2) return;
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    swipeStartX.current = e.clientX;
+    swipeDelta.current = 0;
+    setIsPaused(true);
+  };
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (swipeStartX.current === null) return;
+    swipeDelta.current = e.clientX - swipeStartX.current;
+  };
+
+  const handlePointerEnd = () => {
+    if (swipeStartX.current === null) {
+      setIsPaused(false);
+      return;
+    }
+    const delta = swipeDelta.current;
+    swipeStartX.current = null;
+    swipeDelta.current = 0;
+    if (delta <= -SWIPE_THRESHOLD) next();
+    else if (delta >= SWIPE_THRESHOLD) prev();
+    setIsPaused(false);
+  };
+
+  useEffect(() => {
+    if (total < 2 || isPaused) return;
 
     const timer = setInterval(() => {
       setCurrent((c) => (c + 1) % total);
     }, 6500);
 
     return () => clearInterval(timer);
-  }, [total]);
+  }, [total, isPaused]);
 
   if (total === 0) {
     return (
@@ -73,7 +104,17 @@ export default function GaleriaCarousel({
     <div className="gallery-shell mx-auto max-w-6xl">
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_320px]">
         <div
-          className={`relative overflow-hidden rounded-lg border border-[#dce5f2] bg-[#061e5c] shadow-[0_28px_80px_-40px_rgba(6,30,92,0.8)] ${aspectRatio}`}
+          className={`relative touch-pan-y select-none overflow-hidden rounded-lg border border-[#dce5f2] bg-[#061e5c] shadow-[0_28px_80px_-40px_rgba(6,30,92,0.8)] ${aspectRatio}`}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerEnd}
+          onPointerCancel={handlePointerEnd}
+          onPointerLeave={handlePointerEnd}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          role="region"
+          aria-roledescription="carrusel"
+          aria-label="Galería de imágenes"
         >
           {images.map((image, i) => {
             const isActive = i === active;
@@ -138,7 +179,7 @@ export default function GaleriaCarousel({
             <>
               <button
                 onClick={prev}
-                className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-md border border-white/20 bg-white/90 text-[#061e5c] shadow-lg transition duration-200 hover:-translate-x-0.5 hover:bg-white sm:left-5 sm:h-12 sm:w-12"
+                className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-md border border-white/20 bg-white/90 text-[#061e5c] shadow-lg transition duration-200 hover:-translate-x-0.5 hover:bg-white active:scale-95 sm:left-5 sm:h-12 sm:w-12"
                 aria-label="Imagen anterior"
                 title="Imagen anterior"
               >
@@ -160,7 +201,7 @@ export default function GaleriaCarousel({
 
               <button
                 onClick={next}
-                className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-md border border-white/20 bg-white/90 text-[#061e5c] shadow-lg transition duration-200 hover:translate-x-0.5 hover:bg-white sm:right-5 sm:h-12 sm:w-12"
+                className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-md border border-white/20 bg-white/90 text-[#061e5c] shadow-lg transition duration-200 hover:translate-x-0.5 hover:bg-white active:scale-95 sm:right-5 sm:h-12 sm:w-12"
                 aria-label="Imagen siguiente"
                 title="Imagen siguiente"
               >
@@ -220,7 +261,7 @@ export default function GaleriaCarousel({
               <div className="mt-5 flex gap-3">
                 <button
                   onClick={prev}
-                  className="flex h-11 w-11 items-center justify-center rounded-md border border-[#061e5c]/10 bg-[#f4f7fb] text-[#061e5c] transition hover:bg-[#061e5c] hover:text-white"
+                  className="flex h-11 w-11 items-center justify-center rounded-md border border-[#061e5c]/10 bg-[#f4f7fb] text-[#061e5c] transition hover:bg-[#061e5c] hover:text-white active:scale-95"
                   aria-label="Imagen anterior"
                   title="Imagen anterior"
                 >
@@ -241,7 +282,7 @@ export default function GaleriaCarousel({
                 </button>
                 <button
                   onClick={next}
-                  className="flex h-11 flex-1 items-center justify-center gap-2 rounded-md bg-[#061e5c] px-4 text-sm font-extrabold text-white shadow-md shadow-[#061e5c]/20 transition hover:bg-[#03154a]"
+                  className="flex h-11 flex-1 items-center justify-center gap-2 rounded-md bg-[#061e5c] px-4 text-sm font-extrabold text-white shadow-md shadow-[#061e5c]/20 transition hover:bg-[#03154a] active:scale-[0.98]"
                 >
                   Siguiente
                   <svg
@@ -264,12 +305,12 @@ export default function GaleriaCarousel({
           )}
 
           {total > 1 && (
-            <div className="mt-6 grid grid-cols-4 gap-2 sm:grid-cols-6 lg:grid-cols-3">
+            <div className="mt-6 grid grid-cols-5 gap-2 sm:grid-cols-6 lg:grid-cols-3">
               {images.map((image, i) => (
                 <button
                   key={image.src}
                   onClick={() => goTo(i)}
-                  className={`relative aspect-[5/4] overflow-hidden rounded-md bg-[#061e5c] transition duration-300 ${
+                  className={`relative aspect-square overflow-hidden rounded-md bg-[#061e5c] transition duration-300 active:scale-[0.97] ${
                     i === active
                       ? "ring-2 ring-[#061e5c] ring-offset-2"
                       : "opacity-65 hover:opacity-100"

@@ -41,28 +41,35 @@ export default function Hero() {
       />
 
       <div className="relative z-10 flex min-h-[100svh] items-center">
-        <div className="mx-auto grid w-full max-w-7xl gap-12 px-4 pb-24 pt-32 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-16 lg:px-8 lg:pt-36">
+        <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 pb-20 pt-28 sm:gap-12 sm:px-6 sm:pb-24 sm:pt-32 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-16 lg:px-8 lg:pt-36">
           <div className="reveal-up">
-            <div className="mb-6 flex items-center gap-3 text-sm font-extrabold text-[#061e5c]">
-              <span className="h-px w-12 bg-[#f8b133]" />
-              <span>Fundación Manos que Ayudan</span>
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#dce5f2] bg-white/70 px-4 py-1.5 text-[12px] font-extrabold uppercase tracking-wide text-[#061e5c] shadow-sm backdrop-blur">
+              <span className="h-2 w-2 rounded-full bg-[#f8b133]" />
+              Fundación Manos que Ayudan
             </div>
 
-            <h1 className="max-w-3xl text-5xl font-extrabold leading-[1.04] text-[#061e5c] sm:text-6xl lg:text-[72px] lg:leading-[1]">
+            <h1 className="max-w-3xl text-[40px] font-extrabold leading-[1.06] text-[#061e5c] sm:text-5xl md:text-6xl lg:text-[68px] lg:leading-[1.02] xl:text-[72px]">
               Ayuda comunitaria con gestión{" "}
-              <span className="text-[#f8b133]">responsable</span>.
+              <span className="relative inline-block text-[#f8b133]">
+                responsable
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-x-0 -bottom-1 h-[6px] rounded-full bg-[#f8b133]/25 sm:-bottom-1.5 sm:h-2"
+                />
+              </span>
+              .
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg font-semibold leading-8 text-[#4b5568] sm:text-xl">
+            <p className="mt-6 max-w-2xl text-base font-semibold leading-7 text-[#4b5568] sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
               Coordinamos medicamentos, equipos de movilidad y acompañamiento
               para que la ayuda llegue con orden, dignidad y transparencia a
               quienes más lo necesitan.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:items-center">
               <a
                 href="#ayudas"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-[#061e5c] px-7 py-4 text-sm font-extrabold text-white shadow-lg shadow-[#061e5c]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#03154a]"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-[#061e5c] px-6 py-3.5 text-sm font-extrabold text-white shadow-lg shadow-[#061e5c]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#03154a] active:translate-y-0 active:scale-[0.98] sm:px-7 sm:py-4"
               >
                 Ver jornadas
                 <svg
@@ -82,13 +89,13 @@ export default function Hero() {
               </a>
               <a
                 href="#nosotros"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-[#061e5c]/20 bg-white/80 px-7 py-4 text-sm font-extrabold text-[#061e5c] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#061e5c]/50 hover:bg-white"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-[#061e5c]/20 bg-white/80 px-6 py-3.5 text-sm font-extrabold text-[#061e5c] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#061e5c]/50 hover:bg-white active:translate-y-0 active:scale-[0.98] sm:px-7 sm:py-4"
               >
                 Conocer la fundación
               </a>
             </div>
 
-            <ul className="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <ul className="mt-10 grid grid-cols-1 gap-3 sm:mt-12 sm:grid-cols-3">
               {focusItems.map((item) => (
                 <li
                   key={item.label}
@@ -116,30 +123,34 @@ export default function Hero() {
           </div>
 
           <div className="relative">
-            <div className="hero-logo-panel relative mx-auto max-w-[540px] rounded-lg border border-[#dce5f2] bg-white/90 p-6 shadow-[0_30px_70px_-48px_rgba(6,30,92,0.85)] backdrop-blur">
+            <div
+              aria-hidden="true"
+              className="absolute -inset-4 -z-10 rounded-[28px] bg-[radial-gradient(circle_at_30%_20%,rgba(85,191,230,0.25),transparent_65%)] blur-2xl sm:-inset-8"
+            />
+            <div className="hero-logo-panel relative mx-auto max-w-[480px] rounded-lg border border-[#dce5f2] bg-white/90 p-5 shadow-[0_30px_70px_-48px_rgba(6,30,92,0.85)] backdrop-blur sm:max-w-[540px] sm:p-6">
               <div className="absolute inset-x-0 top-0 h-1 bg-[#f8b133]" />
 
-              <div className="flex min-h-[390px] items-center justify-center py-8 sm:min-h-[460px]">
+              <div className="flex min-h-[320px] items-center justify-center py-6 sm:min-h-[420px] sm:py-8 lg:min-h-[460px]">
                 <Image
                   src="/logo.png"
                   alt="Fundación Manos que Ayudan"
                   width={520}
                   height={520}
-                  className="hero-logo-image h-full max-h-[390px] w-full object-contain drop-shadow-[0_24px_44px_rgba(6,30,92,0.18)] sm:max-h-[430px]"
+                  className="hero-logo-image h-full max-h-[320px] w-full object-contain drop-shadow-[0_24px_44px_rgba(6,30,92,0.18)] sm:max-h-[400px] lg:max-h-[430px]"
                   preload
                 />
               </div>
 
-              <div className="grid border-t border-[#dce5f2] pt-5 sm:grid-cols-3">
+              <div className="grid grid-cols-3 border-t border-[#dce5f2] pt-4 sm:pt-5">
                 {highlights.map((item) => (
                   <div
                     key={item.value}
-                    className="border-[#dce5f2] py-3 sm:border-l sm:first:border-l-0 sm:px-4"
+                    className="border-[#dce5f2] px-2 py-2 first:border-l-0 sm:border-l sm:px-4 sm:py-3"
                   >
-                    <span className="block text-sm font-extrabold text-[#f8b133]">
+                    <span className="block text-xs font-extrabold text-[#f8b133] sm:text-sm">
                       {item.value}
                     </span>
-                    <span className="mt-1 block text-sm font-bold text-[#061e5c]">
+                    <span className="mt-1 block text-[13px] font-bold leading-tight text-[#061e5c] sm:text-sm">
                       {item.label}
                     </span>
                   </div>
@@ -149,6 +160,16 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      <a
+        href="#nosotros"
+        aria-label="Desplazar hacia abajo"
+        className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 items-center justify-center text-[#061e5c]/40 transition hover:text-[#061e5c] lg:flex"
+      >
+        <span className="flex h-10 w-6 items-start justify-center rounded-full border border-current pt-1.5">
+          <span className="h-2 w-1 animate-bounce rounded-full bg-current" />
+        </span>
+      </a>
 
       <div className="absolute bottom-0 left-0 right-0 h-20 bg-[linear-gradient(180deg,rgba(248,250,254,0)_0%,#fff_92%)]" />
     </section>

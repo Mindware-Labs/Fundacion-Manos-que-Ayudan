@@ -43,15 +43,15 @@ export default function Galeria() {
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-14 max-w-3xl text-center reveal-up">
-          <div className="mb-6 inline-flex items-center gap-3 rounded-md border border-[#dce5f2] bg-white px-4 py-2 text-sm font-extrabold text-[#ed1c24] shadow-sm">
+        <div className="mx-auto mb-12 max-w-3xl text-center reveal-up sm:mb-14">
+          <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#dce5f2] bg-white px-4 py-1.5 text-[12px] font-extrabold uppercase tracking-wide text-[#ed1c24] shadow-sm">
             <span className="h-2 w-2 rounded-full bg-[#ed1c24]" />
             Galería oficial
           </div>
-          <h2 className="text-4xl font-extrabold leading-[1.08] text-[#061e5c] lg:text-[54px] lg:leading-[1.03]">
+          <h2 className="text-[32px] font-extrabold leading-[1.1] text-[#061e5c] sm:text-4xl md:text-[44px] md:leading-[1.06] lg:text-[54px] lg:leading-[1.03]">
             Evidencia visual de nuestro trabajo institucional.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg font-semibold leading-8 text-[#64748b]">
+          <p className="mx-auto mt-5 max-w-2xl text-base font-semibold leading-7 text-[#64748b] sm:mt-6 sm:text-lg sm:leading-8">
             Una mirada cuidada al trabajo diario de la Fundación Manos que
             Ayudan y a las alianzas que hacen posible cada entrega.
           </p>

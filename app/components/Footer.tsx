@@ -42,7 +42,7 @@ export default function Footer() {
               {focusAreas.map((area) => (
                 <span
                   key={area.label}
-                  className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-white/10 px-3 py-1.5 text-[11px] font-extrabold uppercase text-white/90 backdrop-blur-md"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[11px] font-extrabold uppercase tracking-wide text-white/90 backdrop-blur-md"
                 >
                   <span
                     className="h-1.5 w-1.5 rounded-full"
@@ -52,53 +52,6 @@ export default function Footer() {
                 </span>
               ))}
             </div>
-
-            <a
-              href="https://www.instagram.com/fundacionmanosqueayudan22"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-8 inline-flex items-center gap-2.5 rounded-md border border-white/20 bg-white/10 px-4 py-2.5 text-sm font-extrabold text-white shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/20"
-              aria-label="Instagram"
-              title="Instagram"
-            >
-              <span
-                className="flex h-7 w-7 items-center justify-center rounded-md shadow-md"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)",
-                }}
-              >
-                <svg
-                  className="h-4 w-4 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
-              </span>
-              Síguenos en Instagram
-              <svg
-                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.5}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </a>
           </div>
 
           <nav className="reveal-up reveal-delay-2">
@@ -132,7 +85,7 @@ export default function Footer() {
               href="https://www.instagram.com/fundacionmanosqueayudan22"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative mt-6 flex items-center gap-4 overflow-hidden rounded-lg border border-white/20 bg-white/10 px-5 py-4 shadow-lg shadow-black/20 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/20"
+              className="group relative mt-6 flex items-center gap-4 overflow-hidden rounded-lg border border-white/20 bg-white/10 px-5 py-4 shadow-lg shadow-black/20 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/25 hover:bg-white/20 active:translate-y-0 active:scale-[0.99]"
             >
               <span
                 className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md shadow-lg"

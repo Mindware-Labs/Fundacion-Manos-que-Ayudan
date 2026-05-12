@@ -154,7 +154,7 @@ export default function Navbar() {
 
             <a
               href="#contacto"
-              className="hidden items-center gap-2 rounded-md bg-[#f8b133] px-5 py-2.5 text-sm font-extrabold text-[#061e5c] shadow-md shadow-[#f8b133]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d79a27] lg:inline-flex"
+              className="hidden items-center gap-2 rounded-md bg-[#f8b133] px-5 py-2.5 text-sm font-extrabold text-[#061e5c] shadow-md shadow-[#f8b133]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d79a27] active:translate-y-0 active:scale-[0.98] lg:inline-flex"
             >
               <svg
                 className="h-4 w-4"

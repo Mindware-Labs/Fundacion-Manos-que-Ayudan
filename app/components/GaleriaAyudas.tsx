@@ -122,18 +122,18 @@ export default function GaleriaAyudas() {
       <div className="absolute inset-0 section-grid opacity-30" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+        <div className="mb-12 grid gap-8 sm:mb-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div className="reveal-up">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-md border border-[#dce5f2] bg-[#f8fafe] px-4 py-2 text-sm font-extrabold text-[#55bfe6] shadow-sm">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#dce5f2] bg-[#f8fafe] px-4 py-1.5 text-[12px] font-extrabold uppercase tracking-wide text-[#55bfe6] shadow-sm">
               <span className="h-2 w-2 rounded-full bg-[#55bfe6]" />
               Jornadas de ayuda
             </div>
-            <h2 className="text-4xl font-extrabold leading-[1.08] text-[#061e5c] lg:text-[54px] lg:leading-[1.03]">
+            <h2 className="text-[32px] font-extrabold leading-[1.1] text-[#061e5c] sm:text-4xl md:text-[44px] md:leading-[1.06] lg:text-[54px] lg:leading-[1.03]">
               Registro de ayudas entregadas con dignidad.
             </h2>
           </div>
 
-          <p className="max-w-2xl text-lg font-semibold leading-8 text-[#64748b] reveal-up reveal-delay-2">
+          <p className="max-w-2xl text-base font-semibold leading-7 text-[#64748b] reveal-up reveal-delay-2 sm:text-lg sm:leading-8">
             Documentamos las jornadas para mostrar el alcance real de las
             entregas, la coordinación con aliados y el acompañamiento a cada
             comunidad.

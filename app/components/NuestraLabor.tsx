@@ -52,15 +52,15 @@ export default function NuestraLabor() {
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-16 max-w-3xl text-center reveal-up">
-          <div className="mb-6 inline-flex items-center gap-3 rounded-md border border-[#dce5f2] bg-white px-4 py-2 text-sm font-extrabold text-[#f8b133] shadow-sm">
+        <div className="mx-auto mb-12 max-w-3xl text-center reveal-up sm:mb-16">
+          <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#dce5f2] bg-white px-4 py-1.5 text-[12px] font-extrabold uppercase tracking-wide text-[#f8b133] shadow-sm">
             <span className="h-2 w-2 rounded-full bg-[#f8b133]" />
             Nuestra labor
           </div>
-          <h2 className="text-4xl font-extrabold leading-[1.08] text-[#061e5c] lg:text-[54px] lg:leading-[1.03]">
+          <h2 className="text-[32px] font-extrabold leading-[1.1] text-[#061e5c] sm:text-4xl md:text-[44px] md:leading-[1.06] lg:text-[54px] lg:leading-[1.03]">
             Programas con impacto visible y procesos claros.
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg font-semibold leading-8 text-[#64748b]">
+          <p className="mx-auto mt-5 max-w-2xl text-base font-semibold leading-7 text-[#64748b] sm:mt-6 sm:text-lg sm:leading-8">
             Organizamos cada entrega para que los recursos lleguen con orden,
             contexto y continuidad a quienes más los necesitan.
           </p>
@@ -70,7 +70,7 @@ export default function NuestraLabor() {
           {servicios.map((servicio, i) => (
             <article
               key={servicio.title}
-              className="reveal-up group relative overflow-hidden rounded-lg border border-[#dce5f2] bg-white shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl"
+              className="reveal-up group relative flex flex-col overflow-hidden rounded-lg border border-[#dce5f2] bg-white shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl"
               style={{ animationDelay: `${i * 100}ms` }}
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-[#061e5c]">
@@ -100,7 +100,7 @@ export default function NuestraLabor() {
                 </span>
               </div>
 
-              <div className="relative p-6">
+              <div className="relative flex flex-1 flex-col p-6">
                 <h3 className="text-lg font-extrabold leading-snug text-[#061e5c]">
                   {servicio.title}
                 </h3>
@@ -108,7 +108,7 @@ export default function NuestraLabor() {
                   {servicio.text}
                 </p>
 
-                <div className="mt-5 flex items-center gap-2 text-[12px] font-extrabold uppercase text-[#7b8794] transition-colors duration-300 group-hover:text-[#061e5c]">
+                <div className="mt-auto flex items-center gap-2 pt-5 text-[12px] font-extrabold uppercase text-[#7b8794] transition-colors duration-300 group-hover:text-[#061e5c]">
                   <span
                     className="h-px flex-1 transition-colors duration-300"
                     style={{

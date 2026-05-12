@@ -87,18 +87,18 @@ export default function QuienesSomos() {
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div className="grid gap-10 md:gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div className="reveal-up">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-md border border-[#dce5f2] bg-[#f8fafe] px-4 py-2 text-sm font-extrabold text-[#55bfe6] shadow-sm">
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#dce5f2] bg-[#f8fafe] px-4 py-1.5 text-[12px] font-extrabold uppercase tracking-wide text-[#55bfe6] shadow-sm">
               <span className="h-2 w-2 rounded-full bg-[#55bfe6]" />
               Quiénes somos
             </div>
 
-            <h2 className="text-4xl font-extrabold leading-[1.08] text-[#061e5c] lg:text-[54px] lg:leading-[1.03]">
+            <h2 className="text-[32px] font-extrabold leading-[1.1] text-[#061e5c] sm:text-4xl md:text-[44px] md:leading-[1.06] lg:text-[54px] lg:leading-[1.03]">
               Una fundación con enfoque humano y administración responsable.
             </h2>
 
-            <p className="mt-6 text-lg font-semibold leading-8 text-[#4b5568]">
+            <p className="mt-5 text-base font-semibold leading-7 text-[#4b5568] sm:mt-6 sm:text-lg sm:leading-8">
               <strong className="font-extrabold text-[#061e5c]">
                 Fundación Manos que Ayudan
               </strong>{" "}
@@ -107,16 +107,16 @@ export default function QuienesSomos() {
               comunidades vulnerables.
             </p>
 
-            <p className="mt-4 leading-8 text-[#64748b]">
+            <p className="mt-4 text-sm leading-7 text-[#64748b] sm:text-base sm:leading-8">
               Cada jornada se organiza con criterio, respeto y seguimiento. La
               ayuda se entrega desde una relación cercana con las familias y las
               instituciones que conocen cada caso.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-7 flex flex-wrap items-center gap-4 sm:mt-8">
               <a
                 href="#labor"
-                className="inline-flex items-center gap-2 rounded-md bg-[#061e5c] px-5 py-3 text-sm font-extrabold text-white shadow-md shadow-[#061e5c]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#03154a]"
+                className="inline-flex items-center gap-2 rounded-md bg-[#061e5c] px-5 py-3 text-sm font-extrabold text-white shadow-md shadow-[#061e5c]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#03154a] active:translate-y-0 active:scale-[0.98]"
               >
                 Conoce nuestra labor
                 <svg
@@ -149,6 +149,10 @@ export default function QuienesSomos() {
           </div>
 
           <figure className="relative reveal-scale reveal-delay-2">
+            <div
+              aria-hidden="true"
+              className="absolute -inset-4 -z-10 rounded-[28px] bg-[radial-gradient(circle_at_70%_30%,rgba(248,177,51,0.18),transparent_60%)] blur-2xl sm:-inset-6"
+            />
             <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-[#061e5c] shadow-[0_34px_78px_-50px_rgba(6,30,92,0.9)] ring-1 ring-[#dce5f2] sm:aspect-[16/11]">
               <Image
                 src="/ayuda3.png"
@@ -180,11 +184,13 @@ export default function QuienesSomos() {
           </figure>
         </div>
 
-        <div className="mt-16 grid gap-5 sm:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 sm:mt-16 lg:grid-cols-3">
           {pilares.map((pilar, i) => (
             <div
               key={pilar.title}
-              className="reveal-up group relative overflow-hidden rounded-lg border border-[#dce5f2] bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className={`reveal-up group relative overflow-hidden rounded-lg border border-[#dce5f2] bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-7 ${
+                i === 2 ? "sm:col-span-2 lg:col-span-1" : ""
+              }`}
               style={{ animationDelay: `${i * 110}ms` }}
             >
               <span
